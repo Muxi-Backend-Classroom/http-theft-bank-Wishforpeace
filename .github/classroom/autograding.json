@@ -1,0 +1,54 @@
+{
+  "tests": [
+    {
+      "name": "test cp1",
+      "setup": "",
+      "run": "cd checkpoint1;docker build -t test/cp1 .;docker run test/cp1",
+      "input": "",
+      "output": "http://http-theft-bank.gtainccnu.muxixyz.com/api/v1/organization/secret_key",
+      "comparison": "included",
+      "timeout": 10,
+      "points": 10
+    },
+    {
+      "name": "test cp2",
+      "setup": "",
+      "run": "cd checkpoint2;docker build -t test/cp2 .;docker run test/cp2",
+      "input": "",
+      "output": "恭喜你",
+      "comparison": "included",
+      "timeout": 10,
+      "points": 20
+    },
+    {
+      "name": "test cp3",
+      "setup": "",
+      "run": "cd checkpoint3;docker build -t test/cp3 .;docker run test/cp3",
+      "input": "",
+      "output": "干的漂亮",
+      "comparison": "included",
+      "timeout": 10,
+      "points": 20
+    },
+    {
+      "name": "test cp4",
+      "setup": "",
+      "run": "cd checkpoint4;docker build -t test/cp4 .;docker run test/cp4",
+      "input": "",
+      "output": "还剩最后一道门了",
+      "comparison": "included",
+      "timeout": 10,
+      "points": 20
+    },
+    {
+      "name": "test cp5",
+      "setup": "",
+      "run": "cd checkpoint5;docker build -t test/cp5 .;docker run test/cp5",
+      "input": "",
+      "output": "我就知道你能成功",
+      "comparison": "included",
+      "timeout": 10,
+      "points": 30
+    }
+  ]
+}
