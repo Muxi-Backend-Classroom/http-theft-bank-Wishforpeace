@@ -2,22 +2,27 @@ package main
 
 import (
 	"fmt"
-	"github.com/Grand-Theft-Auto-In-CCNU-MUXI/hacker-support/httptool"
+	"net/http"
 )
 
 func main() {
-	req, err := httptool.NewRequest(
-		"",
-		"",
-		"",
-		httptool.DEFAULT, // 这里可能不是 DEFAULT，自己去翻阅文档
-	)
+
+	url := "http://http-theft-bank.gtainccnu.muxixyz.com/api/v1/organization/code"
+	method := "GET"
+
+  	client := &http.Client {
+  }
+  	request,err := http.NewRequest(method, url, nil)
 	if err != nil {
 		fmt.Println(err)
-	}
-
-	fmt.Println(req)
-
-	// write your code below
-	// ...
+    	return
+  	}
+  	request.Header.Add("Code","250")//添加code
+  	response, err := client.Do(request)
+  	if err != nil {
+    	fmt.Println(err)
+    	return
+  	}
+	fmt.Printf("Header\n")
+	fmt.Println(response.Header)
 }
