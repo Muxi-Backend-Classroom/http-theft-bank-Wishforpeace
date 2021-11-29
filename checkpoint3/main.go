@@ -13,6 +13,7 @@ import (
 	"net/http"
 	"os"
 	"strings"
+	"log"
 )
 
 func main() {
@@ -50,8 +51,8 @@ func main() {
 	fmt.Println("加密后的error：",error)
 	//获得加密的error_code,成功进入
 	//Post 发送json 格式
-	url = "http://http-theft-bank.gtainccnu.muxixyz.com/api/v1/bank/gate"
-	method = "PUT"
+	url := "http://http-theft-bank.gtainccnu.muxixyz.com/api/v1/bank/gate"
+	method := "PUT"
 	type Body struct{
 		Content string
 	}
@@ -69,6 +70,6 @@ func main() {
 	}
 // 	fmt.Printf("Header3\n")
 // 	fmt.Println(response.Header)
-	body,_ = ioutil.ReadAll(response.Body)
+	body,_ := ioutil.ReadAll(response.Body)
 	fmt.Println(string(body))
 }
