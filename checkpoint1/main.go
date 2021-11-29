@@ -215,7 +215,6 @@ func main() {
 	body ,_ = ioutil.ReadAll(response.Body)
 	fmt.Println(string(body))
 	//最后一关
-	//find the correct token
 	bodyBuf = &bytes.Buffer{}
 	bodyWriter = multipart.NewWriter(bodyBuf)
 	writer, _ = bodyWriter.CreateFormFile("file", "permute.go")
