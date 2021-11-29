@@ -23,9 +23,7 @@ func main() {
   	if err != nil {
     		fmt.Println(err)
     		return 
-  	}
-	fmt.Printf("Header\n")
-	fmt.Println(response.Header)
+	}
 	body, err := ioutil.ReadAll(response.Body)
   	if err != nil {
     	fmt.Println(err)
