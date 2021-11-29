@@ -6,6 +6,8 @@ import (
 	"os"
 	"io/ioutil"
 	"mime/multipart"
+	"bytes"
+	"io"
 )
 func main() {
 	client := &http.Client{}
