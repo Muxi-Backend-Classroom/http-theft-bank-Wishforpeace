@@ -28,14 +28,14 @@ func main() {
 	passport := response.Header["Passport"][0]//保存passport
 	url = "http://http-theft-bank.gtainccnu.muxixyz.com/api/v1/organization/secret_key"
 	
-	request,err =http.NewRequest(method,url,nil)
+	request,err :=http.NewRequest(method,url,nil)
 	request.Header.Add("Code","250")
 	request.Header.Add("Passport",passport)//将passport加入请求头
 	if err != nil{
 		fmt.Println(err)
 		return
 	}
-	response,err = client.Do(request)
+	response,err := client.Do(request)
 	if err != nil {
 		panic(err)
 	}
