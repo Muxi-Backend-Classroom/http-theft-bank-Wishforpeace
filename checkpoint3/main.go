@@ -7,16 +7,17 @@ import (
 	"encoding/base64"
 	"encoding/json"
 	"fmt"
-	"io"
+// 	"io"
 	"io/ioutil"
-	"mime/multipart"
+// 	"mime/multipart"
 	"net/http"
-	"os"
+// 	"os"
 	"strings"
 	"log"
 )
 
 func main() {
+	client := &http.Client{}
 	passport := "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjb2RlIjoiMTIwIiwiaWF0IjoxNjM3MTQ2NDM1LCJuYmYiOjE2MzcxNDY0MzV9.mlggHuQMg4eooV1KBB9scFQE-J7018S5RLpXl-boWX4"
 	info := "c2VjcmV0X2tleTpNdXhpU3R1ZGlvMjAzMzA0LCBlcnJvcl9jb2RlOmZvciB7Z28gZnVuYygpe3RpbWUuU2xlZXAoMSp0aW1lLkhvdXIpfSgpfQ=="
 	decode,err :=base64.StdEncoding.DecodeString(info)
