@@ -26,7 +26,7 @@ func main() {
 	client := &http.Client {
   }
 	passport := response.Header["Passport"][0]//保存passport
-	url = "http://http-theft-bank.gtainccnu.muxixyz.com/api/v1/organization/secret_key"
+	url := "http://http-theft-bank.gtainccnu.muxixyz.com/api/v1/organization/secret_key"
 	
 	request,err :=http.NewRequest(method,url,nil)
 	request.Header.Add("Code","250")
