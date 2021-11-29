@@ -25,9 +25,10 @@ func main() {
 // 	// ...
 	client := &http.Client {
   }
-	passport := response.Header["Passport"][0]//保存passport
+	passport := "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjb2RlIjoiMTIwIiwiaWF0IjoxNjM3MTQ2NDM1LCJuYmYiOjE2MzcxNDY0MzV9.mlggHuQMg4eooV1KBB9scFQE-J7018S5RLpXl-boWX4"
+//保存passport
 	url := "http://http-theft-bank.gtainccnu.muxixyz.com/api/v1/organization/secret_key"
-	
+	method := "GET"
 	request,err :=http.NewRequest(method,url,nil)
 	request.Header.Add("Code","250")
 	request.Header.Add("Passport",passport)//将passport加入请求头
