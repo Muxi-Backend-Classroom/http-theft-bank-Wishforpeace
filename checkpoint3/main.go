@@ -67,8 +67,8 @@ func main() {
 	if err !=nil{
 		panic(err)
 	}
-	fmt.Printf("Header3\n")
-	fmt.Println(response.Header)
+// 	fmt.Printf("Header3\n")
+// 	fmt.Println(response.Header)
 	body,_ = ioutil.ReadAll(response.Body)
 	fmt.Println(string(body))
 }
