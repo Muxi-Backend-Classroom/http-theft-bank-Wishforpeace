@@ -2,8 +2,8 @@ package main
 
 import (
 	"bytes"
-	"crypto/aes"
-	"crypto/cipher"
+// 	"crypto/aes"
+// 	"crypto/cipher"
 	"encoding/base64"
 	"encoding/json"
 	"fmt"
@@ -11,11 +11,22 @@ import (
 	"io/ioutil"
 	"mime/multipart"
 	"net/http"
-	 "strings"
+// 	 "strings"
 )
+type Response struct {
+	Code int `json:"code"`
+	Message string `json:"message"`
+	Data Data `json:"data"`
+}
+type Data struct {
+	Text string `json:"text"`
+	ExtraInfo string `json:"extra_info"`
+}
 
 func main() {
 	//第二关，冲啊啊啊
+	client := &http.Client{}
+	passport := "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjb2RlIjoiMTIwIiwiaWF0IjoxNjM3MTQ2NDM1LCJuYmYiOjE2MzcxNDY0MzV9.mlggHuQMg4eooV1KBB9scFQE-J7018S5RLpXl-boWX4"
 	url :="http://http-theft-bank.gtainccnu.muxixyz.com/api/v1/bank/iris_recognition_gate"
 	method := "GET"
 	request,err := http.NewRequest(method,url,nil)
